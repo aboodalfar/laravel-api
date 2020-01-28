@@ -11,7 +11,7 @@ namespace App\Http\Requests;
 
 use Urameshibr\Requests\FormRequest;
 
-class RegisterRequest extends FormRequest
+class RemoveAddressRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -30,12 +30,8 @@ class RegisterRequest extends FormRequest
      */
     public function rules()
     {
-         return [
-            'first_name' => 'required|string|max:20|min:3',
-            'last_name'  => 'required|string|max:20|min:3',
-            'email' => 'required|email',
-            'cellular_number'=>'required',
-            'password'=>'required|confirmed|min:8|max:16'
-        ];;
+        return [
+            'uuid'
+        ];
     }
 }

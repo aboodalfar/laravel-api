@@ -12,6 +12,16 @@ use Illuminate\Database\Eloquent\Model;
 class Address extends Model
 {
     use \Illuminate\Database\Eloquent\SoftDeletes;
+    protected $primaryKey = 'uuid';
+    
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+      'cellular_number', 'street', 'city','neighborhood','uuid','postal_code','country'
+    ];
     
      public function getCreatedAtAttribute($value)
     {

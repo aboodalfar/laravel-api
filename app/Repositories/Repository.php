@@ -63,4 +63,12 @@ class Repository implements RepositoryInterface
     {
         return $this->model->with($relations);
     }
+    
+    public function updateOrCreate($input) {
+        $keyName = $this->model->getKeyName();        
+        return $this->model::updateOrCreate(
+            [$keyName => $input[$keyName]],
+            $input
+        );
+    }
 }
