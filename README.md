@@ -1,4 +1,4 @@
-#you must run seeder to insert countries and address :
+# you must run seeder to insert countries and address :
 php artisan db:seed
 
 
