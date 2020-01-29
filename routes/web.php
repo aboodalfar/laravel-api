@@ -19,6 +19,6 @@ $router->post('/login', ['middleware' => \App\Http\Middleware\LoginRouteMiddlewa
 $router->post('/register', 'UserController@register');
 $router->get('/address', 'AddressController@getAddress');
 $router->get('/address-by-status', 'AddressController@getAddressByStatus');
-$router->post('/add-address', 'AddressController@addEditAddress');
-$router->post('/remove-address', 'AddressController@removeAddress');
+$router->post('/address', 'AddressController@addEditAddress');
+$router->delete('/address', 'AddressController@removeAddress');
 $router->get('/user', ['middleware' => 'auth', 'uses' =>  'UserController@get_user']);

@@ -37,7 +37,7 @@ class AddEditAddressRequest extends FormRequest
             'neighborhood' => 'required|max:30|min:3',
             'street'=>'required|max:30|min:3',
             'postal_code'=>'required|numeric',
-            'cellular_number'=>'required'
+            'cellular_number'=>'required|regex:/^0[7-9]{2}[0-9]{7}$/'
         ];;
     }
 }

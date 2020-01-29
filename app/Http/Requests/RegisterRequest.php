@@ -34,8 +34,15 @@ class RegisterRequest extends FormRequest
             'first_name' => 'required|string|max:20|min:3',
             'last_name'  => 'required|string|max:20|min:3',
             'email' => 'required|email',
-            'cellular_number'=>'required',
-            'password'=>'required|confirmed|min:8|max:16'
+            'cellular_number'=>'required|regex:/^0[7-9]{2}[0-9]{7}$/',
+            'password'=>"required|confirmed|regex:/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,16}$/"
         ];;
+    }
+    
+    public function message()
+    {
+        return [
+            'password.regex'=>'The :attribute must be 8–16 characters, and include a number, a symbol, a lower and a upper case letter'
+        ];
     }
 }
